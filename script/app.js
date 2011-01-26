@@ -70,7 +70,9 @@ function nickgen() {
 
 function time() {
     var d = new Date();
-    return d.getHours() + ':' + d.getMinutes();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    return (h < 12?'0' + h:h) + ':' + (m < 10?'0' + m:m);
 }
 
 $.fn.chatMessage = function(nick, message) {
