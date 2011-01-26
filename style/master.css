@@ -81,6 +81,10 @@ section#chat p {
     color: red;
 }
 
+#chat p.info {
+    color: #666;
+}
+
 /* input */
 
 section#input {
