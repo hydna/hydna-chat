@@ -90,6 +90,10 @@ body {
     color: red;
 }
 
+#chat p.info {
+    color: #666;
+}
+
 /* input */
 
 #input {
