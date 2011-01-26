@@ -10,7 +10,14 @@ $(document).ready(function() {
     // draw figure when data is received over stream
     stream.onmessage = function(message) {
         var packet = JSON.parse(message);
-        chat.chatMessage(packet.nick, packet.message);
+        switch(packet.type) {
+        case 'join':
+            chat.infoMessage(packet.nick + ' has entered the chat!');
+            break;
+        case 'msg':
+            chat.chatMessage(packet.nick, packet.message);
+            break;
+        }
         // scroll to bottom of chat. this could be disabled when the user
         // has manually scrolled.
         chat.attr('scrollTop', chat.attr('scrollHeight'));
@@ -26,6 +33,10 @@ $(document).ready(function() {
     // initiate paint when stream is ready.
     stream.onopen = function() {
         chat.infoMessage('You are now connected and will henceforth be known as "' + nick + '".');
+        stream.send(JSON.stringify({
+            nick: nick,
+            type: 'join'
+        }));
     };
 
     $('#input input').focus();
@@ -36,6 +47,7 @@ $(document).ready(function() {
         if (input.val()) {
             stream.send(JSON.stringify({
                 nick: nick,
+                type: 'msg',
                 message: input.val()
             }));
             input.val('');
