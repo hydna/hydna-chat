@@ -3,7 +3,7 @@ $(document).ready(function() {
     var chat = $('#chat');
 
     // open a stream to hydna in read/write mode
-    var stream = new HydnaStream('flash.hydna.net:7010/437', 'rw', null, {
+    var stream = new HydnaStream('demo.hydna.net/2222', 'rw', null, {
         transport: 'ws',
     });
 
