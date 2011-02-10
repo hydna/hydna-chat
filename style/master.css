@@ -14,7 +14,9 @@ body {
     font-family: arial, sans-serif;
 }
 
-header {
+/* header */
+
+div#header {
     position: absolute;
     top: 0;
     right: 0;
@@ -25,10 +27,10 @@ header {
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#111));
     -moz-box-shadow: inset rgba(255,255,255,0.3) 0px 0px 2px 0px;
     -webkit-box-shadow: inset rgba(255,255,255,0.3) 0px 0px 2px 0px;
-    color: white;
+    color: #FFF;
 }
 
-header h1 {
+div#header h1 {
     position: absolute;
     top: 11px;
     left: 10px;
@@ -39,7 +41,7 @@ header h1 {
 
 /* chat */
 
-section#chat {
+div#chat {
     position: absolute;
     top: 40px;
     bottom: 40px;
@@ -49,7 +51,7 @@ section#chat {
     overflow: auto;
 }
 
-section#chat p {
+div#chat p {
     font-size: 0.9em;
     line-height: 130%;
 }
@@ -83,7 +85,7 @@ section#chat p {
 
 /* input */
 
-section#input {
+div#input {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -94,7 +96,7 @@ section#input {
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CCC), to(#999));
 }
 
-#input p {
+div#input p {
     position: absolute;
     top: 5px;
     left: 5px;
@@ -103,7 +105,7 @@ section#input {
     border: 1px solid #999;
 }
 
-#input input {
+div#input input {
     border: none;
     display: block;
     width: 100%;
