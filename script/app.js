@@ -3,9 +3,7 @@ $(document).ready(function() {
     var chat = $('#chat');
 
     // open a stream to hydna in read/write mode
-    var stream = new HydnaStream('demo.hydna.net/2222', 'rw', null, {
-        transport: 'polling'
-    });
+    var stream = new HydnaStream('demo.hydna.net/2222', 'rw');
 
     // draw figure when data is received over stream
     stream.onmessage = function(message) {
@@ -76,6 +74,8 @@ function time() {
 }
 
 $.fn.chatMessage = function(nick, message) {
+    nick = nick.replace(/<([^>]+)>/g,'');
+    message = message.replace(/<([^>]+)>/g,'');
     $(this).append([
         '<p class="message">',
         '<span class="time">[',
