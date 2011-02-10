@@ -3,7 +3,9 @@ $(document).ready(function() {
     var chat = $('#chat');
 
     // open a stream to hydna in read/write mode
-    var stream = new HydnaStream('demo.hydna.net/2222', 'rw');
+    var stream = new HydnaStream('demo.hydna.net/2222', 'rw', null, {
+        transport: 'polling'
+    });
 
     // draw figure when data is received over stream
     stream.onmessage = function(message) {
@@ -61,7 +63,7 @@ function nickgen() {
     var pool;
     for (var i = 0; i < length; i++) {
         pool = (i % 2?vocals:consonants);
-        nick.push(pool[Math.floor(Math.random() * pool.length)]);
+        nick.push(pool.charAt(Math.floor(Math.random() * pool.length)));
     }
     return nick.join('');
 }
