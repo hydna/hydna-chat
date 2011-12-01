@@ -2,12 +2,13 @@ $(document).ready(function() {
     var nick = nickgen();
     var chat = $('#chat');
 
-    // open a stream to hydna in read/write mode
-    var stream = new HydnaChannel('public.hydna.net/2222', 'rw');
+    // open a channel to hydna in read/write mode
+    var channel = new HydnaChannel('public.hydna.net/2222', 'rw');
 
-    // draw figure when data is received over stream
-    stream.onmessage = function(message) {
-        var packet = JSON.parse(message);
+    // draw figure when data is received over channel
+    channel.onmessage = function(event) {
+        
+        var packet = JSON.parse(event.data);
         switch(packet.type) {
         case 'join':
             chat.infoMessage(packet.nick + ' has entered the chat!');
@@ -21,17 +22,17 @@ $(document).ready(function() {
         chat.attr('scrollTop', chat.attr('scrollHeight'));
     };
 
-    stream.onerror = function(err) {
+    channel.onerror = function(err) {
         chat.errorMessage('An error has occured. ' + err.message);
     };
-    stream.onclose = function(err) {
+    channel.onclose = function(err) {
         chat.infoMessage('Connection closed. Please reload page.');
     }
 
-    // initiate paint when stream is ready.
-    stream.onopen = function() {
+    // initiate chat when channel is ready.
+    channel.onopen = function() {
         chat.infoMessage('You are now connected and will henceforth be known as "' + nick + '".');
-        stream.send(JSON.stringify({
+        channel.send(JSON.stringify({
             nick: nick,
             type: 'join'
         }));
@@ -43,7 +44,7 @@ $(document).ready(function() {
         event.preventDefault();
         var input = $('input', this);
         if (input.val()) {
-            stream.send(JSON.stringify({
+            channel.send(JSON.stringify({
                 nick: nick,
                 type: 'msg',
                 message: input.val()
