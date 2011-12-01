@@ -3,7 +3,7 @@ $(document).ready(function() {
     var chat = $('#chat');
 
     // open a stream to hydna in read/write mode
-    var stream = new HydnaStream('demo.hydna.net/2222', 'rw');
+    var stream = new HydnaChannel('demo.hydna.net/2222', 'rw');
 
     // draw figure when data is received over stream
     stream.onmessage = function(message) {
@@ -22,7 +22,7 @@ $(document).ready(function() {
     };
 
     stream.onerror = function(err) {
-        chat.errorMessage('An error has occured. ' + err.error);
+        chat.errorMessage('An error has occured. ' + err.message);
     };
     stream.onclose = function(err) {
         chat.infoMessage('Connection closed. Please reload page.');
