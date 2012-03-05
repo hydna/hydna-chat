@@ -2,12 +2,13 @@ $(document).ready(function() {
     var nick = nickgen();
     var chat = $('#chat');
 
+    chat.infoMessage('Connecting ...');
+
     // open a channel to hydna in read/write mode
     var channel = new HydnaChannel('public.hydna.net/2222', 'rw');
 
     // draw figure when data is received over channel
     channel.onmessage = function(event) {
-        
         var packet = JSON.parse(event.data);
         switch(packet.type) {
         case 'join':
