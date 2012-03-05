@@ -2,12 +2,13 @@ $(document).ready(function() {
     var nick = nickgen();
     var chat = $('#chat');
 
+    chat.infoMessage('Connecting ...');
+
     // open a channel to hydna in read/write mode
     var channel = new HydnaChannel('public.hydna.net/2222', 'rw');
 
     // draw figure when data is received over channel
     channel.onmessage = function(event) {
-        
         var packet = JSON.parse(event.data);
         switch(packet.type) {
         case 'join':
@@ -19,7 +20,7 @@ $(document).ready(function() {
         }
         // scroll to bottom of chat. this could be disabled when the user
         // has manually scrolled.
-        chat.attr('scrollTop', chat.attr('scrollHeight'));
+        chat.prop('scrollTop', chat.prop('scrollHeight'));
     };
 
     channel.onerror = function(err) {
@@ -93,7 +94,7 @@ $.fn.chatMessage = function(nick, message) {
 $.fn.infoMessage = function(message) {
     $(this).append([
         '<p class="info">',
-        '<span class="prefix">≡</span>',
+        '<span class="prefix">★</span>',
         message,
         '</p>'
     ].join(''));
@@ -102,9 +103,8 @@ $.fn.infoMessage = function(message) {
 $.fn.errorMessage = function(message) {
     $(this).append([
         '<p class="error">',
-        '<span class="prefix">≡</span>',
+        '<span class="prefix">✗</span>',
         message,
         '</p>'
     ].join(''));
 };
-

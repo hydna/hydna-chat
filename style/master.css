@@ -22,11 +22,7 @@ div#header {
     right: 0;
     left: 0;
     height: 40px;
-    background: black;
-    background: -moz-linear-gradient(100% 100% 90deg, #111, #333);
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#111));
-    -moz-box-shadow: inset rgba(255,255,255,0.3) 0px 0px 2px 0px;
-    -webkit-box-shadow: inset rgba(255,255,255,0.3) 0px 0px 2px 0px;
+    background: #181818;
     color: #FFF;
 }
 
@@ -96,30 +92,32 @@ div#input {
     right: 0;
     height: 40px;
     background: #CCC;
-    background: -moz-linear-gradient(100% 100% 90deg, #999, #CCC);
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CCC), to(#999));
 }
 
-div#input p {
+div#input form {
     position: absolute;
     top: 5px;
     left: 5px;
     right: 5px;
     bottom: 5px;
     border: 1px solid #999;
+    border-radius: 3px;
+    box-shadow: inset 2px 2px 2px 0px #CCC;
+    background: #F8F8F8;
+    padding: 0 5px;
 }
 
 div#input input {
-    border: none;
     display: block;
     width: 100%;
-    font-size: 12px;
     height: 20px;
+    border: none;
     padding: 5px 0;
+    font-size: 12px;
     line-height: 20px;
-    -webkit-box-shadow: #FFF 1px 1px 2px 0px inset;
-    -moz-box-shadow: #FFF 1px 1px 2px 0px inset;
-    background: #FFF;
-    background: -moz-linear-gradient(100% 100% 90deg, #FFF, #EEE);
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEE), to(#FFF));
+    background: transparent;
+}
+
+div#input input:focus {
+    outline: 0;
 }
