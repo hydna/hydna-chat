@@ -19,7 +19,7 @@ $(document).ready(function() {
         }
         // scroll to bottom of chat. this could be disabled when the user
         // has manually scrolled.
-        chat.attr('scrollTop', chat.attr('scrollHeight'));
+        chat.prop('scrollTop', chat.prop('scrollHeight'));
     };
 
     channel.onerror = function(err) {
