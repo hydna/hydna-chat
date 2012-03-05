@@ -94,7 +94,7 @@ $.fn.chatMessage = function(nick, message) {
 $.fn.infoMessage = function(message) {
     $(this).append([
         '<p class="info">',
-        '<span class="prefix">≡</span>',
+        '<span class="prefix">★</span>',
         message,
         '</p>'
     ].join(''));
@@ -103,9 +103,8 @@ $.fn.infoMessage = function(message) {
 $.fn.errorMessage = function(message) {
     $(this).append([
         '<p class="error">',
-        '<span class="prefix">≡</span>',
+        '<span class="prefix">✗</span>',
         message,
         '</p>'
     ].join(''));
 };
-
