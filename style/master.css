@@ -8,6 +8,7 @@ html,
 body {
     width: 100%;
     height: 100%;
+    font-size: 16px;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 
 /* header */
 
-div#header {
+#header {
     position: absolute;
     top: 0;
     right: 0;
@@ -26,18 +27,19 @@ div#header {
     color: #FFF;
 }
 
-div#header h1 {
-    position: absolute;
-    top: 11px;
-    left: 10px;
-    font-size: 14px;
-    margin: 0;
-    text-shadow: #000 1px 1px 0;
+#header h1 {
+    font-size: 16px;
+    line-height: 40px;
+    margin: 0 0 0 20px;
+}
+
+#header h1 a {
+    color: #FF5033;
 }
 
 /* chat */
 
-div#chat {
+#chat {
     position: absolute;
     top: 40px;
     bottom: 40px;
@@ -47,9 +49,8 @@ div#chat {
     overflow: auto;
 }
 
-div#chat p {
-    font-size: 0.9em;
-    line-height: 130%;
+#chat p {
+    line-height: 150%;
 }
 
 #chat p span.nick {
@@ -62,17 +63,17 @@ div#chat p {
     font-weight: bold;
     display: inline-block;
     color: #999;
-    font-weight: monaco, monospace;
-    font-size: 0.8em;
+    font-size: 14px;
+    font-family: monospace;
 }
 
 #chat p span.prefix {
     font-weight: bold;
     display: inline-block;
     margin-right: 5px;
+    font-size: 14px;
     color: #FF5033;
     font-weight: monaco, monospace;
-    font-size: 0.8em;
 }
 
 #chat p.error {
@@ -81,39 +82,30 @@ div#chat p {
 
 /* input */
 
-div#input {
+#input {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 40px;
-    background: #CCC;
+    border-top: 1px solid #999;
+    padding: 0 10px;
+    background: #FFF;
+    box-shadow: inset 0 3px 0 #EEE;
 }
 
-div#input form {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    border: 1px solid #999;
-    border-radius: 3px;
-    box-shadow: inset 2px 2px 2px 0px #CCC;
-    background: #F8F8F8;
-    padding: 0 5px;
-}
-
-div#input input {
+#input input {
     display: block;
     width: 100%;
     height: 20px;
-    border: none;
-    padding: 5px 0;
-    font-size: 12px;
     line-height: 20px;
+    border: none;
+    padding: 10px 0;
     background: transparent;
+    font-size: 16px;
+    margin: 0;
 }
 
-div#input input:focus {
+#input input:focus {
     outline: 0;
 }
