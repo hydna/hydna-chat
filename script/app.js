@@ -7,7 +7,7 @@ $(document).ready(function() {
   // open a channel to hydna in read/write mode.
   // NOTE: You must replace <YOUR DOMAIN> with your actual domain to be able
   // to run this script.
-  var channel = new HydnaChannel('<YOUR DOMAIN>', 'rw');
+  var channel = new HydnaChannel('public.hydna.net/2222', 'rw');
 
   // handle packets as they are received over channel
   channel.onmessage = function(event) {
