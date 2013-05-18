@@ -5,9 +5,9 @@ $(document).ready(function() {
   chat.infoMessage('Connecting ...');
 
   // open a channel to hydna in read/write mode.
-  // NOTE: You must replace <YOUR DOMAIN> with your actual domain to be able
-  // to run this script.
-  var channel = new HydnaChannel('<YOUR DOMAIN>', 'rw');
+  // NOTE: You must replace <simple-chat.hydna.net> with your actual domain
+  // to be able to run this script.
+  var channel = new HydnaChannel('simple-chat.hydna.net', 'rw');
 
   // handle packets as they are received over channel
   channel.onmessage = function(event) {
@@ -72,7 +72,7 @@ function nickgen() {
   var nick = [];
   var pool;
   for (var i = 0; i < length; i++) {
-    pool = (i % 2?vocals:consonants);
+    pool = (i % 2 ? vocals : consonants);
     nick.push(pool.charAt(Math.floor(Math.random() * pool.length)));
   }
   return nick.join('');
