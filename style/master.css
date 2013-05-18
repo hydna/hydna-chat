@@ -28,13 +28,23 @@ body {
 }
 
 #header h1 {
-    font-size: 16px;
-    line-height: 40px;
     margin: 0 0 0 20px;
+    font-size: 14px;
+    line-height: 40px;
+    background: url(../img/mark.png) no-repeat left center;    
 }
 
 #header h1 a {
-    color: #FF5033;
+  padding-left: 26px;
+  color: white;
+  text-decoration: none;
+}
+
+#header h1 .sub {
+  margin-left: 6px;
+  color: #666;
+  font-size: 12px;
+  font-weight: normal;
 }
 
 /* chat */
