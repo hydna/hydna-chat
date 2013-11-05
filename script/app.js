@@ -4,6 +4,14 @@ $(document).ready(function() {
 
   chat.infoMessage('Connecting ...');
 
+  function resizeHandler () {
+    $("#chat").css({ maxHeight: $("body").height() - 100 });
+  }
+
+  $(window).resize(resizeHandler);
+  $("input").bind("focus blur", resizeHandler);
+  resizeHandler();
+
   // open a channel to hydna in read/write mode.
   // NOTE: You must replace <simple-chat.hydna.net> with your actual domain
   // to be able to run this script.
@@ -36,6 +44,7 @@ $(document).ready(function() {
   }
 
   channel.onopen = function() {
+    
     // we're connected and the channel is open. display a nice message and
     // broadcast this information to the channel.
     chat.infoMessage('You are now connected and will henceforth be known as "'

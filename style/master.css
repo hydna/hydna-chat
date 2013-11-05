@@ -25,6 +25,7 @@ body {
     height: 40px;
     background: #181818;
     color: #FFF;
+    z-index: 10000;
 }
 
 #header h1 {
@@ -51,7 +52,6 @@ body {
 
 #chat {
     position: absolute;
-    top: 40px;
     bottom: 40px;
     left: 0;
     right: 0;
