@@ -36,16 +36,16 @@ body {
 }
 
 #header h1 a {
-  padding-left: 26px;
-  color: white;
-  text-decoration: none;
+    padding-left: 26px;
+    color: white;
+    text-decoration: none;
 }
 
 #header h1 .sub {
-  margin-left: 6px;
-  color: #666;
-  font-size: 12px;
-  font-weight: normal;
+    margin-left: 6px;
+    color: #666;
+    font-size: 12px;
+    font-weight: normal;
 }
 
 /* chat */
