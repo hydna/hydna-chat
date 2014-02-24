@@ -92,7 +92,7 @@ function time() {
     var d = new Date();
     var h = d.getHours();
     var m = d.getMinutes();
-    return (h < 12?'0' + h:h) + ':' + (m < 10?'0' + m:m);
+    return (h < 10?'0' + h:h) + ':' + (m < 10?'0' + m:m);
 }
 
 // append a chat message to an element
